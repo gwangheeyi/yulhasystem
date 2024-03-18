@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:yulhasystem/snackpage.dart';
 import 'orderpage.dart';
 import 'requestpage.dart';
 import 'holeinonepage.dart';
 import 'infopage.dart';
+import 'snackpage.dart';
+//import 'package:flutter_cart/flutter_cart.dart';
+import 'orderpage1.dart';
 
 void main() {
-
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -24,7 +28,7 @@ class TabScreen extends StatefulWidget {
 class _TabScreenState extends State<TabScreen> with SingleTickerProviderStateMixin{
 
   late TabController tabController = TabController(
-      length: 4,
+      length: 5,
       vsync: this,
       initialIndex: 0,
       //탭 변경 애니메이션 시간
@@ -41,6 +45,7 @@ class _TabScreenState extends State<TabScreen> with SingleTickerProviderStateMix
           controller: tabController,
           tabs: const [
             Tab(icon:Icon(Icons.coffee),text:"음료주문"),
+            Tab(icon:Icon(Icons.fastfood),text:"스낵 안주주문"),
             Tab(icon:Icon(Icons.sports_golf_sharp),text:"게임문의"),
             Tab(icon:Icon(Icons.golf_course),text: "홀인원 기록"),
             Tab(icon:Icon(Icons.notifications),text:"공지사항")
@@ -64,7 +69,9 @@ class _TabScreenState extends State<TabScreen> with SingleTickerProviderStateMix
         TabBarView(
         controller: tabController,
         children: [
-          OrderPage(),
+          //OrderPage(),
+          OrderPage1(),
+          SnackPage(),
           RequestPage(),
           HoleInOnePage(),
           InfoPage()

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+//Widget
 class OrderPage extends StatefulWidget {
   const OrderPage({super.key});
 
@@ -7,6 +9,7 @@ class OrderPage extends StatefulWidget {
 }
 
 class _OrderPageState extends State<OrderPage> {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,7 +26,17 @@ class _OrderPageState extends State<OrderPage> {
             Flexible(
                 child:Container(
                   child:Column(
-                    children: [Text('아이스커피',style: TextStyle(fontSize: 30,fontWeight:FontWeight.bold)),Text('0원')],
+                    children:[
+                    Row(
+                    children: [Text('아이스커피',style: TextStyle(fontSize: 30,fontWeight:FontWeight.bold)),
+                      Text('   0원', style: TextStyle(fontSize:30,fontWeight: FontWeight.bold,color: Colors.red))]
+                    ),
+                    Row(
+                      children: [
+                        ElevatedButton(onPressed: (){}, style:ElevatedButton.styleFrom(backgroundColor: Colors.blue),child: Text('+',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30))),
+                        ElevatedButton(onPressed: (){}, style:ElevatedButton.styleFrom(backgroundColor: Colors.blue),child: Text('-',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30))),
+                      ],
+                    )],
                   )
                 ),
                 flex: 7),
