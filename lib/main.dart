@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'orderpage.dart';
+import 'requestpage.dart';
+import 'holeinonepage.dart';
+import 'infopage.dart';
 
 void main() {
 
   runApp(
-      MaterialApp(home:const TabScreen()),
+      MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home:const TabScreen(),
+      ),
   );
 }
 
@@ -25,16 +32,11 @@ class _TabScreenState extends State<TabScreen> with SingleTickerProviderStateMix
   );
 
   @override
-  void dispose(){
-    tabController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("율하스크린 주문 시스템"),
+        toolbarHeight:0,
+        backgroundColor: Colors.black12,
         bottom: TabBar(
           controller: tabController,
           tabs: const [
@@ -58,7 +60,16 @@ class _TabScreenState extends State<TabScreen> with SingleTickerProviderStateMix
           ),
         ),
       ),
-      body:null,
+      body:
+        TabBarView(
+        controller: tabController,
+        children: [
+          OrderPage(),
+          RequestPage(),
+          HoleInOnePage(),
+          InfoPage()
+        ],
+      ),
     );
   }
 }
