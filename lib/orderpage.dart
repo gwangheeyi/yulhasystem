@@ -18,28 +18,28 @@ class _OrderPageState extends State<OrderPage> {
           children: [
             //주문판
             Flexible(
+                flex: 3,
                 child:Container(
                   color: Colors.blue,
-                ),
-                flex: 3),
+                )),
             //메뉴판
             Flexible(
+                flex: 7,
                 child:Container(
                   child:Column(
                     children:[
-                    Row(
+                    const Row(
                     children: [Text('아이스커피',style: TextStyle(fontSize: 30,fontWeight:FontWeight.bold)),
                       Text('   0원', style: TextStyle(fontSize:30,fontWeight: FontWeight.bold,color: Colors.red))]
                     ),
                     Row(
                       children: [
-                        ElevatedButton(onPressed: (){}, style:ElevatedButton.styleFrom(backgroundColor: Colors.blue),child: Text('+',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30))),
-                        ElevatedButton(onPressed: (){}, style:ElevatedButton.styleFrom(backgroundColor: Colors.blue),child: Text('-',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30))),
+                        ElevatedButton(onPressed: (){}, style:ElevatedButton.styleFrom(backgroundColor: Colors.blue),child: const Text('+',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30))),
+                        ElevatedButton(onPressed: (){}, style:ElevatedButton.styleFrom(backgroundColor: Colors.blue),child: const Text('-',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30))),
                       ],
                     )],
                   )
-                ),
-                flex: 7),
+                )),
           ],
         ),
       ),

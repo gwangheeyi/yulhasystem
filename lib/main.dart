@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:yulhasystem/snackpage.dart';
-import 'orderpage.dart';
 import 'requestpage.dart';
 import 'holeinonepage.dart';
 import 'infopage.dart';
-import 'snackpage.dart';
 //import 'package:flutter_cart/flutter_cart.dart';
 import 'orderpage1.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
-      MaterialApp(
+      const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home:const TabScreen(),
+        home:TabScreen(),
       ),
   );
 }
@@ -61,14 +59,14 @@ class _TabScreenState extends State<TabScreen> with SingleTickerProviderStateMix
           indicatorColor: Colors.blue,
           indicator: BoxDecoration(
               color: Colors.red.shade900,
-              borderRadius: BorderRadius.all(Radius.circular(10))
+              borderRadius: const BorderRadius.all(Radius.circular(10))
           ),
         ),
       ),
       body:
         TabBarView(
         controller: tabController,
-        children: [
+        children: const [
           //OrderPage(),
           OrderPage1(),
           SnackPage(),

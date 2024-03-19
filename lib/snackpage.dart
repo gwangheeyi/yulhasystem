@@ -10,7 +10,7 @@ class SnackPage extends StatefulWidget {
 class _SnackPageState extends State<SnackPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body:Text("Snack Page"),
     );
   }

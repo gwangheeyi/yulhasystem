@@ -9,7 +9,7 @@ class RequestPage extends StatefulWidget {
 class _RequestPageState extends State<RequestPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Text("Request Page"),
     );
   }
